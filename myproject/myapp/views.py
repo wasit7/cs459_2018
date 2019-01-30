@@ -9,7 +9,7 @@ def current_datetime(request):
     html = "<html><body>It is now %s.</body></html>" % now
     return HttpResponse(html)
 
-def list_product(request):
+def product_list(request):
     text="""
         <ul>
     """
