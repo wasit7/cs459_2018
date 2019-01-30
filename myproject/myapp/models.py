@@ -15,5 +15,7 @@ class Product(models.Model):
         choices=CATEGORY_CHOICES,
         default='M',
     )
+    image = models.ImageField( blank=True )
+
     def __str__(self):
         return self.name
