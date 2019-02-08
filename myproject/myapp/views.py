@@ -9,15 +9,15 @@ def current_datetime(request):
     html = "<html><body>It is now %s.</body></html>" % now
     return HttpResponse(html)
 
-def product_list(request):
-    text="""
-        <ul>
-    """
-    for i in Product.objects.all():
-        text = text+'<li>'+str( i )+'</li>'
-    return HttpResponse(text)
+# def product_list(request):
+#     text="""
+#         <ul>
+#     """
+#     for i in Product.objects.all():
+#         text = text+'<li>'+str( i )+'</li>'
+#     return HttpResponse(text)
 
 
-def  base(request):
+def  product_list(request):
     context={'key':'value'}
-    return render(request, 'base.html', context)
+    return render(request, 'product_list.html', context)
