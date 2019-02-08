@@ -19,5 +19,5 @@ def current_datetime(request):
 
 
 def  product_list(request):
-    context={'key':'value'}
+    context={'key':'value','products':Product.objects.all()}
     return render(request, 'product_list.html', context)
