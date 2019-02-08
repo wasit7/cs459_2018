@@ -16,3 +16,8 @@ def product_list(request):
     for i in Product.objects.all():
         text = text+'<li>'+str( i )+'</li>'
     return HttpResponse(text)
+
+
+def  base(request):
+    context={'key':'value'}
+    return render(request, 'base.html', context)
