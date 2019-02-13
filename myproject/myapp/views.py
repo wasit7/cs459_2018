@@ -17,12 +17,21 @@ def  product_list(request):
 class ProductListView(generic.ListView):
     model = Product
     template_name = 'product_list2.html'
-    queryset = Product.objects.filter(category='V')
+    #queryset = Product.objects.filter(category='V')
+    queryset = Product.objects.all()
+    # paginate_by = 3
     def get_context_data(self, **kwargs):
-        # Call the base implementation first to get the context
         context = super(ProductListView, self).get_context_data(**kwargs)
-        # Create any data and add it to the context
         context['name'] = 'Hey Wasit!!'
         
+        return context
+
+class ProductDetailView(generic.DetailView):
+    model = Product
+    template_name = 'product_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['name'] = 'Hey Wasit!!'
         return context
 
