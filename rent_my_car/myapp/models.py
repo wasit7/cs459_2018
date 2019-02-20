@@ -12,4 +12,9 @@ class Car(models.Model):
     purchasing_date = models.DateField()
     price = models.DecimalField( max_digits=10, decimal_places=2 )
 
-
+class Rent(models.Model):
+    start = models.DateField()
+    stop = models.DateField()
+    cost = models.DecimalField( max_digits=10, decimal_places=2 )
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE)
+    car = models.ForeignKey(Car, on_delete=models.CASCADE)
